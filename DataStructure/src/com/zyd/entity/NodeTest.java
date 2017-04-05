@@ -7,6 +7,6 @@ public class NodeTest {
 
 	public static void main(String[] args) {
 		
-		List list = new LinkedList<String>();
+		List<String> list = new LinkedList<>();
 	}
 }
