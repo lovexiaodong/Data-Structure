@@ -2,6 +2,9 @@ package com.zyd.entity;
 
 public class StructNode<T> {
 
-	public T t;
-	public StructNode<T> next;
+	public T data;
+	public StructNode<T> leftNode;
+	public StructNode<T> rigthNode;
+	public int lTag;
+	public int rTag;
 }
