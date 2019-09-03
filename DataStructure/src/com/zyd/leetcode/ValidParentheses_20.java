@@ -12,11 +12,11 @@ public class ValidParentheses_20 {
 	}
 	 public static boolean isValid(String s) {
 	       HashMap<String, String> map = new HashMap<>();
-	       //'(', ')', '{', '}', '[' and ']'
 	       map.put(")", "(");
 	       map.put("}", "{");
 	       map.put("]", "[");
-	       
+
+
 	       if(s == null || s.length() <=0) {
 	    	   return true;
 	       }
