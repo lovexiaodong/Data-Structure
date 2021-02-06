@@ -3,6 +3,10 @@ package com.zyd.leetcode;
 public class DynamicDemo {
 
     public static void main(String[] args) {
+        dynamic2();
+    }
+
+    public static void dynamic1(){
         int[] w = { 0 , 2 , 3 , 4 , 5 };			//商品的体积2、3、4、5
         int[] v = { 0 , 3 , 4 , 5 , 6 };
         int bagW = 8;
@@ -27,5 +31,30 @@ public class DynamicDemo {
 
             System.out.println();
         }
+    }
+
+    public static void dynamic2(){
+        int[] money = new int[]{1,2,5};
+        int total = 11;
+
+        System.out.println(coinChage(total, money));
+    }
+
+    public static int coinChage(int total, int[] money){
+        if(total == 0) return 0;
+        if(total < 0) return  -1;
+
+        int result = Integer.MAX_VALUE;
+
+        for (int i = 0; i < money.length; i++){
+
+            int temp = coinChage(total - money[i], money);
+            if(temp == -1){
+                temp = Integer.MAX_VALUE - 1;
+            }
+            result = Math.min(result,  temp + 1);
+        }
+
+        return result;
     }
 }
